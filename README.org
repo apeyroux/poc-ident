@@ -35,8 +35,12 @@ cert=/etc/stunnel/certs/stunnel.pem
 Sur le client,
 
 #+BEGIN_SRC sh
+docker-compose up
+#+END_SRC
+
+#+BEGIN_SRC sh
 docker-compose exec stc bash
-export http_proxy = http://127.0.0.1:8080
+export http_proxy = http://127.0.0.1:8080 # cette variable est déjà set via le Dockerfile 
 apt update # solicite le stun qui solicite echovars et donne le log suivant
 #+END_SRC
 
