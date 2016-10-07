@@ -1,4 +1,4 @@
-* Exemple d'utilisation stunnel/exec
+* POC stunnel/exec
 
 ** stunnel server
 
