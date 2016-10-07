@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  squid:
+    build: squid
+    volumes:
+      - ./squid/etc/squid.conf:/etc/squid3/squid.conf
+    external_links:
+      - stunnel-server
+
+  stc:
+    build: stunnel-client
+    volumes:
+      - ./stunnel-client:/etc/stunnel
+    external_links:
+      - stsrv
+
+  stsrv:
+    build: stunnel-server
+    volumes:
+      - ./stunnel-server:/etc/stunnel
+    ports:
+      - 443:443
+    external_links:
+      - squid
+      - stc

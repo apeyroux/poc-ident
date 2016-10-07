@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+echo "remote_host:$REMOTE_HOST remote_port:$REMOTE_PORT ssldn:$SSL_CLIENT_DN sslidn:$SSL_CLIENT_I_DN" >> /etc/stunnel/log.txt

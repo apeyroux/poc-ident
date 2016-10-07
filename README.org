@@ -1,0 +1,87 @@
+* Exemple d'utilisation stunnel/exec
+
+** stunnel server
+
+#+BEGIN_SRC sh
+[squid] 
+accept = 8888
+# connect = squid:3128
+CAfile = /etc/stunnel/certs/stunnel.pem
+exec = /etc/stunnel/echovars
+# execargs = $REMOTE_HOST
+sslVersion = TLSv1
+#+END_SRC
+
+** stunnel client
+
+#+BEGIN_SRC sh
+[squid]
+accept=127.0.0.1:8080
+connect=stsrv:8888
+CAfile=/etc/stunnel/certs/stunnel.pem
+cert=/etc/stunnel/certs/stunnel.pem
+#+END_SRC
+
+** Test
+
+Sur le client,
+
+#+BEGIN_SRC sh
+docker-compose exec stc bash
+export http_proxy = http://127.0.0.1:8080
+apt update # solicite le stun qui solicite echovars et donne le log suivant
+#+END_SRC
+
+Exec de echovars qui log dans un txt. On retrouve bien les post
+source, dest et les cert.
+
+#+BEGIN_SRC 
+remote_host:172.20.0.2 remote_port:47478 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47476 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47484 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47486 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47492 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47493 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47502 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47500 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47508 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47510 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47516 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47518 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47524 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47526 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47533 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47532 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47540 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47542 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47548 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47550 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47556 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47558 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47562 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47566 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47570 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47574 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47578 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47582 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47586 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47590 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47596 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47598 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47602 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47606 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47610 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47614 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47618 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47622 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47626 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47630 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47634 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47638 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47642 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47646 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47650 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47654 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47658 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+remote_host:172.20.0.2 remote_port:47662 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+#+END_SRC
