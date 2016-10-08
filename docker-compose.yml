@@ -7,6 +7,11 @@ services:
       - ./squid/etc/squid.conf:/etc/squid3/squid.conf
     external_links:
       - stunnel-server
+      - redis
+
+
+  redis:
+    image: redis
 
   stc:
     build: stunnel-client
@@ -24,3 +29,4 @@ services:
     external_links:
       - squid
       - stc
+      - redis

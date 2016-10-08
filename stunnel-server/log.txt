@@ -46,3 +46,9 @@ remote_host:172.20.0.2 remote_port:47650 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex
 remote_host:172.20.0.2 remote_port:47654 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
 remote_host:172.20.0.2 remote_port:47658 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
 remote_host:172.20.0.2 remote_port:47662 ssldn:C=FR, ST=IdF, O=PX, OU=SSL, CN=ex.ja.pe sslidn:C=FR, ST=IdF, O=Peyroux, CN=Peyroux CA, emailAddress=ca@px.io
+GET HTTP://google.fr/ HTTP/1.1
+User-Agent: curl/7.38.0
+Host: google.fr
+Accept: */*
+Proxy-Connection: Keep-Alive
+

@@ -1,0 +1,150 @@
+GET HTTP://google.fr/ HTTP/1.1
+User-Agent: curl/7.38.0
+Host: google.fr
+Accept: */*
+Proxy-Connection: Keep-Alive
+
+GET HTTP://google.fr/ HTTP/1.1
+User-Agent: curl/7.38.0
+Host: google.fr
+Accept: */*
+Proxy-Connection: Keep-Alive
+
+GET HTTP://google.fr/ HTTP/1.1
+User-Agent: curl/7.38.0
+Host: google.fr
+Accept: */*
+Proxy-Connection: Keep-Alive
+
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.fr/
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 08 Oct 2016 07:46:56 GMT
+Expires: Mon, 07 Nov 2016 07:46:56 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 218
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Age: 150
+X-Cache: HIT from 6ee5f36cc0ca
+X-Cache-Lookup: HIT from 6ee5f36cc0ca:3128
+Via: 1.1 6ee5f36cc0ca (squid/3.4.8)
+Connection: keep-alive
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.fr/">here</A>.
+</BODY></HTML>
+new sessionHTTP/1.1 301 Moved Permanently
+Location: http://www.google.fr/
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 08 Oct 2016 07:46:56 GMT
+Expires: Mon, 07 Nov 2016 07:46:56 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 218
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Age: 162
+X-Cache: HIT from 6ee5f36cc0ca
+X-Cache-Lookup: HIT from 6ee5f36cc0ca:3128
+Via: 1.1 6ee5f36cc0ca (squid/3.4.8)
+Connection: keep-alive
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.fr/">here</A>.
+</BODY></HTML>
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.fr/
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 08 Oct 2016 07:46:56 GMT
+Expires: Mon, 07 Nov 2016 07:46:56 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 218
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Age: 47
+X-Cache: HIT from 6ee5f36cc0ca
+X-Cache-Lookup: HIT from 6ee5f36cc0ca:3128
+Via: 1.1 6ee5f36cc0ca (squid/3.4.8)
+Connection: keep-alive
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.fr/">here</A>.
+</BODY></HTML>
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.fr/
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 08 Oct 2016 07:46:56 GMT
+Expires: Mon, 07 Nov 2016 07:46:56 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 218
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Age: 56
+X-Cache: HIT from 6ee5f36cc0ca
+X-Cache-Lookup: HIT from 6ee5f36cc0ca:3128
+Via: 1.1 6ee5f36cc0ca (squid/3.4.8)
+Connection: keep-alive
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.fr/">here</A>.
+</BODY></HTML>
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.fr/
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 08 Oct 2016 07:46:56 GMT
+Expires: Mon, 07 Nov 2016 07:46:56 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 218
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Age: 57
+X-Cache: HIT from 6ee5f36cc0ca
+X-Cache-Lookup: HIT from 6ee5f36cc0ca:3128
+Via: 1.1 6ee5f36cc0ca (squid/3.4.8)
+Connection: keep-alive
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.fr/">here</A>.
+</BODY></HTML>
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.fr/
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 08 Oct 2016 07:46:56 GMT
+Expires: Mon, 07 Nov 2016 07:46:56 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 218
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Age: 71
+X-Cache: HIT from 6ee5f36cc0ca
+X-Cache-Lookup: HIT from 6ee5f36cc0ca:3128
+Via: 1.1 6ee5f36cc0ca (squid/3.4.8)
+Connection: keep-alive
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.fr/">here</A>.
+</BODY></HTML>

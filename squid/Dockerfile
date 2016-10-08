@@ -7,4 +7,4 @@ RUN squid3 -z -F
 
 expose 3128
 
-CMD squid3 -N -X
+CMD squid3 -NCd1
